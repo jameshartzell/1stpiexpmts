@@ -2,13 +2,19 @@
 
 {% block y %}
 	<head>
-        <link rel="stylesheet" href="/static/css/h.css" />
+        <link rel="stylesheet" href="/static/css/s.css" />
 		<meta name="viewport" content="initial-scale=1, width=device-width">
 		<title>catnet</title>
 	</head>
 	<body>
         <div class="mainheader">
-            <h1 class="name">yeet</h1>
+            <h1>yeet</h1>
         </div>
-        <script type="text/javascript" src="{{ easteregg }}"></script>
+        <div id="zone" class="zone">
+
+        </div>
+        <div class="printout">
+            <p id="print"></p>
+        </div>
+        <script type="text/javascript" src="static/js/controller.js">
 {% endblock %}
