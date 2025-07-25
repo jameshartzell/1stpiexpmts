@@ -3,7 +3,8 @@
 {% block y %}
 	<head>
         <link rel="stylesheet" href="/static/css/s.css" />
-		<meta name="viewport" content="initial-scale=1, width=device-width">
+        <script type="text/javascript" src="/static/js/controller.js"></script>
+		<!--<meta name="viewport" content="initial-scale=1, width=device-width">-->
 		<title>catnet</title>
 	</head>
 	<body>
@@ -16,5 +17,5 @@
         <div class="printout">
             <p id="print"></p>
         </div>
-        <script type="text/javascript" src="static/js/controller.js">
+        <script type="text/javascript" >controller();</script>
 {% endblock %}
