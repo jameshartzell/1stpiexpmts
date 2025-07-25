@@ -10,9 +10,9 @@ from datetime import datetime,timedelta
 import pytz,sys,os,random,requests,uuid,time,asyncio,base64,io
 
 #==========================================================================
-#localex                                     uvicorn server:app --reload
+#localex                                        uvicorn server:app --reload
 #--------------------------------------------------------------------------
-#nodebuglocalex                                      gunicorn guidnet:app
+#nodebuglocalex                                        gunicorn guidnet:app
 #==========================================================================
 
 #==========================================================================
