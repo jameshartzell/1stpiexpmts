@@ -41,7 +41,26 @@ async def root(request:Request):
     except Exception as e:
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        dbc().hlog('root',f"{exc_type} - {str(e)}\n{fname} - ln {exc_tb.tb_lineno}")
+        print('root',f"{exc_type} - {str(e)}\n{fname} - ln {exc_tb.tb_lineno}")
+
+
+class Input(BaseModel):
+    x:float
+    y:float
+
+@app.post("/control")
+async def control(request:Request,input:Input):
+    try:
+        resp = {"cool":"thanks"}
+
+        print(input.x,input.y)
+        #DO THING HERE HEEEHEEEEHAAAWW
+        return resp
+
+    except Exception as e:
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        print('root',f"{exc_type} - {str(e)}\n{fname} - ln {exc_tb.tb_lineno}")
 
 @app.get("/healthcheck")
 async def health():
