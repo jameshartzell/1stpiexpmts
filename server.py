@@ -7,7 +7,8 @@ from pydantic import BaseModel
 from typing import List
 from typing_extensions import Annotated #type: ignore
 from datetime import datetime,timedelta
-import pytz,sys,os,random,requests,uuid,time,asyncio,base64,io
+import pytz,sys,os,random,requests,uuid,time,asyncio,base64,io,time
+import RPi.GPIO as GPIO
 
 #==========================================================================
 #localex                                        uvicorn server:app --reload
@@ -21,6 +22,11 @@ import pytz,sys,os,random,requests,uuid,time,asyncio,base64,io
 app = FastAPI()
 app.mount('/static',StaticFiles(directory='static'),'static')
 templates = Jinja2Templates('Templates')
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(11, 50)
+GPIO.setup(12, 50)
+x = GPIO.PWM(11, 50)
+y = GPIO.PWM(12, 50)
 
 #==========================================================================
 #internal------------------------------------------------------------------

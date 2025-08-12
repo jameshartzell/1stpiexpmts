@@ -3,7 +3,20 @@ function controller(){
     var zr = zone.getBoundingClientRect();
     var p = document.getElementById("print");
     p.innerHTML = zr.height + " x " + zr.width;
+}
 
+function defaultpos() {
+    fetch("/defaultpos");
+}
+
+function testpos() {
+    manX = parseFloat(document.getElementById("manX").value);
+    manY = parseFloat(document.getElementById("manY").value);
+    fetch("/control", {
+        method: "POST",
+        body: JSON.stringify({x: manX,y: manY}),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    });
 }
 
 (function() {
